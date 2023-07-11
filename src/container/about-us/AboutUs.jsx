@@ -1,13 +1,13 @@
-import * as React from "react";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
+import { LiveTv, TrendingUp } from "@mui/icons-material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Box } from "@mui/material";
-import GroupsIcon from "@mui/icons-material/Groups";
-import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
+import { Box } from "@mui/material";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import Typography from "@mui/material/Typography";
+import * as React from "react";
+import s from "./aboutUs.module.scss";
 export default function AboutUs() {
   return (
     <Box
@@ -20,19 +20,16 @@ export default function AboutUs() {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <GroupsIcon />
-            <Typography>THE TEAM</Typography>
+            <LiveTv />
+            <Typography>Movie</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              The team in soccer consists of eleven players on the field at one
-              time, including a goalkeeper who is responsible for protecting the
-              goal. Each player has a specific position and role to play within
-              the team's strategy and tactics, such as forwards who are
-              responsible for scoring goals, defenders who prevent the opposing
-              team from scoring, and midfielders who link the defense and
-              attack. A successful team in soccer requires strong communication,
-              coordination, and teamwork among all players on the field.
+              Film, also called motion picture or movie, series of still
+              photographs on film, projected in rapid succession onto a screen
+              by means of light. Because of the optical phenomenon known as
+              persistence of vision, this gives the illusion of actual, smooth,
+              and continuous movement.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -42,23 +39,17 @@ export default function AboutUs() {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <FmdGoodIcon />
+            <TrendingUp />
 
-            <Typography>Nation</Typography>
+            <Typography>IMDB</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              In football, a nation typically refers to a national team
-              consisting of players who represent a particular country in
-              international competitions such as the World Cup or continental
-              championships. These teams are often composed of the best players
-              from that country's domestic leagues as well as other professional
-              leagues around the world. National teams in football are usually
-              managed by a head coach who is responsible for selecting the
-              squad, implementing tactics and strategies, and motivating the
-              players. The success of a national team in football depends on
-              many factors such as the quality of the players, the team's style
-              of play, and the strength of the opposition.
+              IMDb (an acronym for Internet Movie Database) is an online
+              database of information related to films, television series,
+              podcasts, home videos, video games, and streaming content online –
+              including cast, production crew and personal biographies, plot
+              summaries, trivia, ratings, and fan and critical reviews
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -70,15 +61,31 @@ export default function AboutUs() {
           >
             <WhatshotIcon />
 
-            <Typography>Daily news</Typography>
+            <Typography>Daily news movie</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Fernandez rose through the ranks at Valencia's youth academy and
-              made his first-team debut last season, scoring two goals in six
-              appearances. His impressive performances caught the attention of
-              scouts from several top European clubs, but it was Manchester
-              United who secured his signature.
+              <div className={s.news}>
+                <a href="https://www.empireonline.com/movies/news/james-gunn-hints-at-guardians-spin-off-featuring-star-lord-becoming-a-reality/">
+                  James Gunn Hints At Guardians Spin-Off Featuring Star-Lord
+                  Becoming A Reality
+                </a>
+                <a href="https://www.empireonline.com/movies/news/deadpool-3-wolverine-yellow-suit/">
+                  Deadpool 3: Hugh Jackman’s Yellow Wolverine Suit Unveiled By
+                  Ryan Reynolds
+                </a>
+                <a href="https://www.empireonline.com/movies/news/napoleon-trailer-joaquin-phoenix-ridley-scott-historical-epic/">
+                  Napoleon Trailer Sends Joaquin Phoenix To War In Ridley
+                  Scott’s Historical Epic
+                </a>
+                <a href="https://www.empireonline.com/movies/news/jennifer-garner-returning-as-marvels-elektra-for-deadpool-3/">
+                  Jennifer Garner Returning as Marvel’s Elektra For Deadpool 3
+                </a>
+                <a href="https://www.empireonline.com/movies/news/john-wick-4-nearly-had-more-obvious-ending-exclusive/">
+                  John Wick 4 Nearly Had A More Obvious Final Scene: ‘The
+                  Audience Preferred The Ambiguous Ending’ – Exclusive
+                </a>
+              </div>
             </Typography>
           </AccordionDetails>
         </Accordion>

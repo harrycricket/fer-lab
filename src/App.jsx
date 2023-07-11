@@ -45,7 +45,6 @@ function App() {
             <Route path="/contact" element={<ContactUs />}></Route>
             <Route path="/about" element={<AboutUs />}></Route>
             <Route path="/news" element={<News />}></Route>
-            <Route path="/add" element={<AddPlayer />}></Route>
           </Routes>
           <Footer />
         </Box>

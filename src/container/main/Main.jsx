@@ -7,8 +7,10 @@ export default function Main(props) {
     getPlayers();
   }, []);
   const getPlayers = async () => {
-    const response = await fetch(BASE_URL + "/a");
+    const response = await fetch(BASE_URL);
+    console.log(response);
     const players = await response.json();
+    console.log(players);
     setPlayers(players);
   };
   return <Players players={players} />;

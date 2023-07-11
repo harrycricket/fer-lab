@@ -25,15 +25,15 @@ export default function ModelVideoPlayer({ open, setOpen, player }) {
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <Typography variant="h4" color="text.primary">
-          Video for {player.name}
+        <Typography variant="h4" color="text.primary" textAlign="center">
+          Video for {player.title}
         </Typography>
 
         <p>
           <iframe
             width={"600px"}
             height={"400px"}
-            title={player.name}
+            title={player.title}
             src={player.video}
             frameBorder={0}
             allowFullScreen
@@ -42,7 +42,7 @@ export default function ModelVideoPlayer({ open, setOpen, player }) {
         </p>
         <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
           <Button
-            onClick={() => setOpen(false)}
+            onClick={() => handleClose()}
             color="brands"
             variant="outlined"
             sx={{ marginLeft: "auto" }}

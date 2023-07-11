@@ -18,34 +18,43 @@ const style = (theme) => {
   };
 };
 export default function PlayerCard({ player }) {
+  console.log(player.img);
   const navigate = useNavigate();
   const theme = useTheme();
   const s = style(theme);
   return (
     <Box sx={s.container}>
       <Box sx={s.image}>
-        <img src={`../../${player.img}`} alt="" style={{ width: "100%" }} />
+        <img src={player.img} alt="" style={{ width: "100%" }} />
       </Box>
       <Box sx={s.content}>
         <Box>
           <Typography
-            sx={s.name}
-            style={{ fontSize: "2rem" }}
+            sx={s.title}
+            style={{ fontSize: "2.4rem", fontWeight: "700" }}
             variant="h3"
             color={"text.brands"}
           >
-            {player.name}
+            {player.title}
           </Typography>
           <Typography
-            sx={s.club}
-            style={{ fontSize: "1.6rem" }}
+            sx={s.nation}
+            style={{ fontSize: "1.4rem" }}
             variant="h4"
             color={"text.secondary"}
           >
-            {player.club}
+            Nation: {player.nation}
+          </Typography>
+          <Typography
+            sx={s.year}
+            style={{ fontSize: "1.4rem" }}
+            variant="h4"
+            color={"text.secondary"}
+          >
+            Year published: {player.year}
           </Typography>
         </Box>
-        <IconButton onClick={() => navigate("/detail/" + player.id)}>
+        <IconButton onClick={() => navigate("detail/" + player.id)}>
           <MoreVertOutlinedIcon />
         </IconButton>
       </Box>

@@ -1,15 +1,16 @@
-import React, { Component, useContext, useState } from "react";
-import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { Box, IconButton, Tab, Tabs, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
+import {
+  ContactPage,
+  DarkMode,
+  Feed,
+  Info,
+  LightMode,
+} from "@mui/icons-material";
 import HomeIcon from "@mui/icons-material/Home";
+import { Box, IconButton, Tab, Tabs, Typography } from "@mui/material";
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
-import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 export default function Navigation({ colorMode }) {
   const navigate = useNavigate();
   const theme = useTheme();
@@ -29,6 +30,8 @@ export default function Navigation({ colorMode }) {
           zIndex: "1000",
           height: "60px",
           padding: "auto 0",
+          left: "0",
+          top: "0",
         }}
       >
         <Grid2 xs={3}>
@@ -36,7 +39,7 @@ export default function Navigation({ colorMode }) {
             sx={{ fontSize: "2.4rem", marginLeft: "60px" }}
             color="brands.main"
           >
-            Player Cards
+            List Films
           </Typography>
         </Grid2>
         <Grid2
@@ -48,11 +51,7 @@ export default function Navigation({ colorMode }) {
           }}
         >
           <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode}>
-            {theme.palette.mode === "dark" ? (
-              <Brightness7Icon />
-            ) : (
-              <Brightness4Icon />
-            )}
+            {theme.palette.mode === "dark" ? <DarkMode /> : <LightMode />}
           </IconButton>
           <Tabs
             value={value}
@@ -72,7 +71,7 @@ export default function Navigation({ colorMode }) {
               onClick={() => navigate("/about")}
               label={
                 <Box sx={{ display: "flex", marginRight: "10px" }}>
-                  <InfoOutlinedIcon /> <Typography> About</Typography>
+                  <Info /> <Typography> About</Typography>
                 </Box>
               }
               value={2}
@@ -81,7 +80,7 @@ export default function Navigation({ colorMode }) {
               onClick={() => navigate("/news")}
               label={
                 <Box sx={{ display: "flex", marginRight: "10px" }}>
-                  <ArticleOutlinedIcon /> <Typography> New</Typography>
+                  <Feed /> <Typography> News</Typography>
                 </Box>
               }
               value={3}
@@ -91,19 +90,10 @@ export default function Navigation({ colorMode }) {
               onClick={() => navigate("/contact")}
               label={
                 <Box sx={{ display: "flex", marginRight: "10px" }}>
-                  <ContactsOutlinedIcon /> <Typography>Contact</Typography>
+                  <ContactPage /> <Typography>Contact</Typography>
                 </Box>
               }
               value={4}
-            />
-            <Tab
-              onClick={() => navigate("/add")}
-              label={
-                <Box sx={{ display: "flex" }}>
-                  <PersonAddAlt1Icon /> <Typography>Add player</Typography>
-                </Box>
-              }
-              value={5}
             />
           </Tabs>
         </Grid2>

@@ -1,9 +1,7 @@
-import React, { Component } from "react";
-import { ListPlayers } from "../../assets/store/ListOfPlayers.js";
-import "./players.css";
-import { Link } from "react-router-dom";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2.js";
+import React from "react";
 import PlayerCard from "../../components/player-card/PlayerCard.jsx";
+import "./players.css";
 
 export default function Players({ players }) {
   return (

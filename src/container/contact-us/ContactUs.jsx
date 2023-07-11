@@ -1,6 +1,5 @@
 import { useTheme } from "@emotion/react";
-import { Label } from "@mui/icons-material";
-import BorderColorIcon from "@mui/icons-material/BorderColor";
+import { Draw } from "@mui/icons-material";
 import {
   Box,
   Button,
@@ -13,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React from "react";
 import * as Yup from "yup";
 const styled = (theme) => {
   return {
@@ -39,10 +38,14 @@ export default function ContactUs() {
       name: Yup.string()
         .required("Required.")
         .min(2, "Must be 2 characters or more"),
-      phone: Yup.number().integer().typeError("Please enter a valid number"),
+      phone: Yup.number()
+        .integer()
+        .typeError("Please enter a valid number")
+        .required("Required."),
       email: Yup.string().required("Required.").email("Invalid email"),
       nation: Yup.number()
         .integer()
+        .required("Required.")
         .typeError("Please select a favorite nation."),
       content: Yup.string()
         .required("Required.")
@@ -71,7 +74,7 @@ export default function ContactUs() {
           flexDirection: "column",
           gap: "20px",
           width: "50%",
-          padding: "10px 20px",
+          padding: "20px 50px",
           border: "1px solid " + theme.palette.brands.main,
         }}
         onSubmit={formik.handleSubmit}
@@ -138,11 +141,14 @@ export default function ContactUs() {
             }}
           >
             <MenuItem value="0" selected>
-              <em>Choose your favorite nation</em>
+              <em>Favorite genre of movie</em>
             </MenuItem>
-            <MenuItem value={1}>England</MenuItem>
-            <MenuItem value={2}>France</MenuItem>
-            <MenuItem value={3}>Spain</MenuItem>
+            <MenuItem value={1}>Action</MenuItem>
+            <MenuItem value={2}>Drama</MenuItem>
+            <MenuItem value={3}>Comedy</MenuItem>
+            <MenuItem value={4}>Romance</MenuItem>
+            <MenuItem value={5}>Science Fiction</MenuItem>
+            <MenuItem value={6}>Horror</MenuItem>
           </Select>
           {formik.errors.nation && (
             <Typography variant="caption" color="red">
@@ -151,7 +157,7 @@ export default function ContactUs() {
           )}
         </FormControl>
         <Box sx={{ display: "flex", alignItems: "start", gap: 1 }}>
-          <BorderColorIcon color="primary" mt={2} />
+          <Draw color="primary" mt={2} />
           <TextField
             id="content"
             name="content"
@@ -188,7 +194,7 @@ export default function ContactUs() {
         )}
 
         <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-          <Button variant="outlined" sx={{ fontSize: 24 }} type="submit">
+          <Button variant="outlined" sx={{ fontSize: 20 }} type="submit">
             Submit
           </Button>
         </Box>
